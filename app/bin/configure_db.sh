@@ -1,10 +1,10 @@
 #!/bin/bash
 
-export PGPASSWORD = 'crsoq_pass'
+export PGPASSWORD = "crsoq_pass"
 
 APP_LIST="postgres"
-PGUSER='test_user'
-PGDB = 'crsoq_db'
+PGUSER="test_user"
+PGDB = "crsoq_db"
 
 # Crea un nuevo usuario
 #psql -U postgres -c CREATE USER $PGUSER WITH ENCRYPTED PASSWORD 'example_password';
