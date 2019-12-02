@@ -1,8 +1,7 @@
 #!/bin/bash
 
-export PGPASSWORD = "crsoq_pass"
-
 APP_LIST="postgres"
+PGPASS="crsoq_pass"
 PGUSER="test_user"
 PGDB = "crsoq_db"
 
