@@ -7,7 +7,7 @@ PGUSER='test_user'
 PGDB = 'crsoq_db'
 
 # Crea un nuevo usuario
-psql -U postgres -c CREATE USER $PGUSER WITH ENCRYPTED PASSWORD 'example_password';
+#psql -U postgres -c CREATE USER $PGUSER WITH ENCRYPTED PASSWORD 'example_password';
 #psql -U postgres GRANT ALL PRIVILEGES ON DATABASE $PGDB TO $PGUSER;
 
 
