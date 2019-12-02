@@ -3,7 +3,7 @@
 APP_LIST="postgres"
 PGPASS="crsoq_pass"
 PGUSER="test_user"
-PGDB = "crsoq_db"
+PGDB="crsoq_db"
 
 # Crea un nuevo usuario
 #psql -U postgres -c CREATE USER $PGUSER WITH ENCRYPTED PASSWORD 'example_password';
