@@ -7,18 +7,16 @@ PGDB="crsoq_test"
 
 # Crea un nuevo usuario
 echo "Creating user: $PGUSER..."
-psql -U postgres -c "CREATE USER $PGUSER WITH ENCRYPTED PASSWORD $PGPASS";
-# createuser -U postgres $PGUSER --encrypted --login; #
+psql -U postgres -c "CREATE USER $PGUSER WITH ENCRYPTED PASSWORD '$PGPASS'";
 
-#psql -U postgres GRANT ALL PRIVILEGES ON DATABASE $PGDB TO $PGUSER;
+# createuser -U postgres $PGUSER; 
+# psql -U postgres -c "ALTER USER $PGUSER WITH ENCRYPTED PASSWORD '$PGPASS'";
 
+echo "Configuring database: $PGDB..."
+dropdb -U $PGUSER --if-exists $PGDB;
+createdb -U $PGUSER $PGDB;
 
-#echo "Configuring database: $PGDB..."
-
-# Crea la db 'crsoq_db' - -w = --no-password
-# dropdb -U $PGUSER  --if-exists $PGDB;
-# createdb -U $PGUSER $PGDB;
-
+psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE $PGDB TO $PGUSER";
 # Ejecuta las sql del archivo 'database.sql' sobre la db 'crsoq_db'
 # psql -U $PGUSER $PGDB < ./app/bin/database.sql
 
