@@ -1,14 +1,14 @@
 #!/bin/bash
 
-export PGPASSWORD="crsoq_pass"
+export PGPASSWORD="postgres"
 PGUSER="crsoq_user"
+PGPASS="crsoq_pass"
 PGDB="crsoq_test"
 
 # Crea un nuevo usuario
 echo "Creating user: $PGUSER..."
-sudo -i -u postgres
-psql  -c "CREATE USER $PGUSER WITH ENCRYPTED PASSWORD $PGPASS";
-# createuser -U postgres $PGUSER --encrypted --login; #--interactive
+psql -U postgres -c "CREATE USER $PGUSER WITH ENCRYPTED PASSWORD $PGPASS";
+# createuser -U postgres $PGUSER --encrypted --login; #
 
 #psql -U postgres GRANT ALL PRIVILEGES ON DATABASE $PGDB TO $PGUSER;
 
