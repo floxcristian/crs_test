@@ -17,7 +17,7 @@ PGDB="crsoq_test"
 #createdb -U $PGUSER $PGDB;
 
 # Ejecuta las sql del archivo 'database.sql' sobre la db 'crsoq_db'
-psql -U $PGUSER $PGDB < ./bin/sql/$database.sql
+psql -U $PGUSER $PGDB < ./bin/sql/database.sql
 
 #echo "$PGDB configured..."
 
