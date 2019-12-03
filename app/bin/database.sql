@@ -1,11 +1,11 @@
 ---
 
-DROP DATABASE IF EXISTS crs_test;
-CREATE DATABASE crs_test;
+--DROP DATABASE IF EXISTS crs_test;
+--CREATE DATABASE crs_test;
 
-CREATE USER crs_user WITH ENCRYPTED PASSWORD 'crs_pass';
+--CREATE USER crs_user WITH ENCRYPTED PASSWORD 'crs_pass';
 
-GRANT ALL PRIVILEGES ON DATABASE crs_test TO crs_user;
+--GRANT ALL PRIVILEGES ON DATABASE crs_test TO crs_user;
 
 -- ----------------------------
 -- Table structure for users

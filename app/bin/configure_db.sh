@@ -1,7 +1,6 @@
 #!/bin/bash
 
-APP_LIST="postgres"
-PGPASS="crsoq_pass"
+export PGPASSWORD="crsoq_pass"
 PGUSER="crsoq_user"
 PGDB="crsoq_test"
 
@@ -12,12 +11,12 @@ PGDB="crsoq_test"
 
 #echo "Configuring database: $PGDB..."
 
-# Crea la db 'crsoq_db'
-#dropdb -U $PGUSER $PGDB;
-#createdb -U $PGUSER $PGDB;
+# Crea la db 'crsoq_db' - -w = --no-password
+dropdb -U $PGUSER  --if-exists $PGDB;
+createdb -U $PGUSER $PGDB;
 
 # Ejecuta las sql del archivo 'database.sql' sobre la db 'crsoq_db'
-psql -U $PGUSER $PGDB < ./bin/database.sql
+psql -U $PGUSER $PGDB < ./app/bin/database.sql
 
 #echo "$PGDB configured..."
 
