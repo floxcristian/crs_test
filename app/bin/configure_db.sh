@@ -13,8 +13,8 @@ psql -U postgres -c "CREATE USER $PGUSER WITH ENCRYPTED PASSWORD '$PGPASS'";
 # psql -U postgres -c "ALTER USER $PGUSER WITH ENCRYPTED PASSWORD '$PGPASS'";
 
 echo "Configuring database: $PGDB..."
-dropdb -U $PGUSER --if-exists $PGDB;
-createdb -U $PGUSER $PGDB;
+dropdb -U postgres --if-exists $PGDB;
+createdb -U postgres $PGDB;
 
 psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE $PGDB TO $PGUSER";
 # Ejecuta las sql del archivo 'database.sql' sobre la db 'crsoq_db'
