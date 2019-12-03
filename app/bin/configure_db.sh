@@ -6,7 +6,7 @@ PGDB="crsoq_test"
 
 # Crea un nuevo usuario
 echo "Creating user: $PGUSER..."
-sudo - postgres
+sudo -i -u postgres
 psql  -c "CREATE USER $PGUSER WITH ENCRYPTED PASSWORD $PGPASS";
 # createuser -U postgres $PGUSER --encrypted --login; #--interactive
 
