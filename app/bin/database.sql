@@ -1,12 +1,5 @@
----
-
---DROP DATABASE IF EXISTS crs_test;
---CREATE DATABASE crs_test;
-
---CREATE USER crs_user WITH ENCRYPTED PASSWORD 'crs_pass';
-
---GRANT ALL PRIVILEGES ON DATABASE crs_test TO crs_user;
-
+--  ERROR: function uuid_generate_v4() does not exist
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 -- ----------------------------
 -- Table structure for users
 -- ----------------------------
@@ -341,5 +334,5 @@ VALUES (date_part('year', CURRENT_DATE), 1);
 
 
 
-CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+--CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 INSERT INTO courses(id_calendar, id_user, id_subject, name, course_goal, student_goal, code) VALUES(1,1,1,'dfffsds',2323,223,LEFT(uuid_generate_v4()::text, 8));
