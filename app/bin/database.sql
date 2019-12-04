@@ -171,6 +171,7 @@ CREATE TABLE categories
 -- ----------------------------
 -- Table structure for subcategories
 -- ----------------------------
+---ERROR: fk_subcategory_category
 DROP TABLE IF EXISTS subcategories;
 CREATE TABLE subcategories
 (
