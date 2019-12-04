@@ -1,4 +1,8 @@
+-- ----------------------------
+-- UUID Extension
+-- ----------------------------
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
 -- ----------------------------
 -- Table structure for users
 -- ----------------------------
@@ -269,7 +273,6 @@ CREATE TABLE user_subject_color
 -- ----------------------------
 -- Table structure for class_question
 -- ----------------------------
---- ERROR: relation 'questions' doesn't exist
 DROP TABLE IF EXISTS class_question;
 CREATE TABLE class_question
 (
@@ -284,7 +287,6 @@ CREATE TABLE class_question
 -- ----------------------------
 -- Table structure for user_class_question
 -- ----------------------------
---- ERROR: relation 'class_question' doesn't exist
 DROP TABLE IF EXISTS user_class_question;
 CREATE TABLE user_class_question
 (
@@ -333,5 +335,7 @@ VALUES ('rojo', 'F4516C'), ('verde', '34BFA3'), ('amarillo', 'FFB822'), ('morado
 INSERT INTO calendars (year, semester)
 VALUES (date_part('year', CURRENT_DATE), 1);
 
---CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+-- ----------------------------
+-- Records of courses
+-- ----------------------------
 INSERT INTO courses(id_calendar, id_user, id_subject, name, course_goal, student_goal, code) VALUES(1,1,1,'dfffsds',2323,223,LEFT(uuid_generate_v4()::text, 8));
