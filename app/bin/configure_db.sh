@@ -19,6 +19,7 @@ createdb -U postgres $PGDB;
 psql -U postgres -c "GRANT ALL PRIVILEGES ON DATABASE $PGDB TO $PGUSER";
 # Ejecuta las sql del archivo 'database.sql' sobre la db 'crsoq_db'
 # psql -U $PGUSER $PGDB < ./app/bin/database.sql
+psql -U postgres $PGDB < ./app/bin/database.sql
 
 #echo "$PGDB configured..."
 
