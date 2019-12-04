@@ -170,9 +170,6 @@ CREATE TABLE categories
 -- ----------------------------
 -- Table structure for subcategories
 -- ----------------------------
----ERROR: fk_subcategory_category
---- subcategory.id_category INTEGER
---- category.id_category uuid
 DROP TABLE IF EXISTS subcategories;
 CREATE TABLE subcategories
 (
@@ -192,7 +189,7 @@ DROP TABLE IF EXISTS questions;
 CREATE TABLE questions
 (
 	id_question SERIAL,
-	id_subcategory INTEGER NOT NULL,
+	id_subcategory UUID NOT NULL,
 	description VARCHAR(30) NOT NULL,
 	difficulty SMALLINT NOT NULL,
 	shared BOOLEAN DEFAULT FALSE,
@@ -272,6 +269,7 @@ CREATE TABLE user_subject_color
 -- ----------------------------
 -- Table structure for class_question
 -- ----------------------------
+--- ERROR: relation 'questions' doesn't exist
 DROP TABLE IF EXISTS class_question;
 CREATE TABLE class_question
 (
@@ -286,6 +284,7 @@ CREATE TABLE class_question
 -- ----------------------------
 -- Table structure for user_class_question
 -- ----------------------------
+--- ERROR: relation 'class_question' doesn't exist
 DROP TABLE IF EXISTS user_class_question;
 CREATE TABLE user_class_question
 (
