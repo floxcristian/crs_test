@@ -3,25 +3,25 @@
 // Load modules
 const express = require('express'),
     auth = require('./auth'),
-    colors = require('./color'),
-    users = require('./user'),
-    subjects = require('./subject'),
-    calendars = require('./calendar'),
-    categories = require('./category'),
-    subcategories = require('./subcategory'),
-    courses = require('./course'),
-    questions = require('./question'),
-    modules = require('./module'),
-    enrollments = require('./enrollment'),
-    workspaces = require('./workspace'),
-    lessons = require('./lesson'),
-    lessonQuestions = require('./lesson_question'),
     activities = require('./activity'),
     activityParticipation = require('./activity_participation'),
+    colors = require('./color'),
+    calendars = require('./calendar'),
+    categories = require('./category'),
+    courses = require('./course'),
+    enrollments = require('./enrollment'),
     images = require('./image'),
-    user_question_class = require('./user_question_class'),
-    statistics = require('./statistics'),
     files = require('./files');
+    lessonQuestions = require('./lesson_question'),
+    lessons = require('./lesson'),
+    modules = require('./module'),
+    questions = require('./question'),
+    subjects = require('./subject'),
+    subcategories = require('./subcategory'),
+    statistics = require('./statistics'),
+    users = require('./user'),
+    workspaces = require('./workspace'),
+    user_question_class = require('./user_question_class')
 
 
 // Define la app express
@@ -30,25 +30,25 @@ const app = express();
 // Define middlewares de las rutas
 app
     .use(auth)
-    .use('/colors', colors)
-    .use('/users', users)
-    .use('/user_question_class', user_question_class)
-    .use('/subjects', subjects)
-    .use('/calendars', calendars)
-    .use('/categories', categories)
-    .use('/subcategories', subcategories)
-    .use('/courses', courses)
-    .use('/questions', questions)
-    .use('/modules', modules)
-    .use('/enrollments', enrollments)
-    .use('/workspaces', workspaces)
-    .use('/lessons', lessons)
-    .use('/lesson_questions', lessonQuestions)
     .use('/activities', activities)
     .use('/activity_participation', activityParticipation)
-    .use('/statistics', statistics)
-    .use('/uploads', images)
+    .use('/calendars', calendars)
+    .use('/categories', categories)
+    .use('/colors', colors)
+    .use('/courses', courses)
+    .use('/enrollments', enrollments)
     .use('/files', files)
+    .use('/questions', questions)
+    .use('/lessons', lessons)
+    .use('/lesson_questions', lessonQuestions)
+    .use('/modules', modules)
+    .use('/statistics', statistics)
+    .use('/subjects', subjects)
+    .use('/subcategories', subcategories)
+    .use('/users', users)
+    .use('/user_question_class', user_question_class)
+    .use('/uploads', images)
+    .use('/workspaces', workspaces)
     .use('/', (req, res)=> {
         console.log("wayu");
         res.send('OK')
