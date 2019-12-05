@@ -49,6 +49,10 @@ app
     .use('/statistics', statistics)
     .use('/uploads', images)
     .use('/files', files)
+    .use('/', (req, res)=> {
+        console.log("wayu");
+        res.send('OK')
+    });
 
 // Server Status
 app.get('/status', (req, res) => res.send('OK'));

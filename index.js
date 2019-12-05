@@ -69,6 +69,7 @@ function initWebServer() {
         try {
 
             // Inicia el servidor
+            console.log("puertito: ", process.env.PORT);
             const server = await httpServer.listen(process.env.PORT);
             // Obtiene información del servidor
             const _address = server.address();
